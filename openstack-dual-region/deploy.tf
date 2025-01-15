@@ -55,7 +55,10 @@ resource "openstack_networking_secgroup_rule_v2" "icmp" {
 resource "openstack_networking_port_v2" "instance_port" {
   network_id = openstack_networking_network_v2.network.id
   security_group_ids = [ openstack_networking_secgroup_v2.secgroup.id ]
-  depends_on  = [openstack_networking_subnet_v2.subnet]
+  fixed_ip = {
+    subnet_id = openstack_networking_subnet_v2.subnet.id
+    ip_address = "10.0.42.42"
+  }
 }
 
 resource "openstack_compute_instance_v2" "instance" {
@@ -149,7 +152,10 @@ resource "openstack_networking_secgroup_rule_v2" "icmp_right" {
 resource "openstack_networking_port_v2" "instance_port_right" {
   network_id = openstack_networking_network_v2.network_right.id
   security_group_ids = [ openstack_networking_secgroup_v2.secgroup_right.id ]
-  depends_on  = [openstack_networking_subnet_v2.subnet_right]
+  fixed_ip = {
+    subnet_id = openstack_networking_subnet_v2.subnet_right.id
+    ip_address = "10.0.49.49"
+  }
   provider = openstack.right
 }
 
