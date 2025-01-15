@@ -19,7 +19,6 @@ resource "openstack_networking_subnet_v2" "subnet" {
   network_id = openstack_networking_network_v2.network.id
   cidr = "10.0.42.0/24"
   ip_version = 4
-  dns_nameservers = ["8.8.8.8", "4.4.4.4"]
 }
 
 resource "openstack_networking_router_interface_v2" "router_interface" {
@@ -108,7 +107,6 @@ resource "openstack_networking_subnet_v2" "subnet_right" {
   network_id = openstack_networking_network_v2.network_right.id
   cidr = "10.1.49.0/24"
   ip_version = 4
-  dns_nameservers = ["8.8.8.8", "4.4.4.4"]
   provider = openstack.right
 }
 
