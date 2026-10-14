@@ -57,8 +57,8 @@ variable "flavor" {
 }
 
 variable "size" {
-  type = string
-  default = "20"
+  type = number
+  default = 20
 }
 
 variable "region_left" {
