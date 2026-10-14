@@ -166,7 +166,7 @@ resource "openstack_networking_router_interface_v2" "router_interface_ipv4_right
 resource "openstack_networking_router_interface_v2" "router_interface_ipv6_right" {
   router_id = openstack_networking_router_v2.router_right.id
   subnet_id = openstack_networking_subnet_v2.subnet_ipv6_right.id
-  provider= openstack.right
+  provider = openstack.right
 }
 
 resource "openstack_networking_floatingip_v2" "floatingip_right" {

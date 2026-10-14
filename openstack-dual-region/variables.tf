@@ -26,17 +26,17 @@ variable "instance_name" {
   type = string
 }
 
-variable external_network {
+variable "external_network" {
   type = string
   default = "ext-net"
 }
 
-variable ipv6_subnetpool {
+variable "ipv6_subnetpool" {
   type = string
   default = "ipv6_tenant_pool"
 }
 
-variable ipv6_mode {
+variable "ipv6_mode" {
   type = string
   default = "slaac"
 
